@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Úkol app</title>
+</head>
+<body>
+<center>
+    <h1>Formulář pro přídávání podnikatelů do databáze</h1>
+    <form class="site-form" action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <div style = "position:relative; top:50px; left:1px" class="fieldWrapper">
+            <label for="name">Jméno</label>
+            {{ form.name }}
+        </div>
+        <div style = "position:relative; top:50px" class="fieldWrapper">
+            <label for="mail">E-mail</label>
+            {{ form.mail }}
+        </div>
+        <div style = "position:relative; top:50px; left:8px" class="fieldWrapper">
+            <label for="ico">IČO</label>
+            {{ form.ico }}
+        </div>
+        <div style = "position:relative; top:8px; left:150px" class="fieldWrapper">
+             <input type="submit" value="Uložit">
+        </div>
+    </form>
+
+    {% for message in messages %}
+        <div style = "position:relative; top:100px"  class="alert alert-success">
+            {{ message }}
+        </div>
+        <div style = "position:relative; top:120px"  class="alert alert-success">
+            <a class="close" href="/ukol" data-dismiss="alert">X</a>
+        </div>
+    {% endfor %}
+</center>
+</body>
+</html>
