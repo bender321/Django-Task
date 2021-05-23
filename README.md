@@ -26,29 +26,34 @@
 # Installation:
 ## PyCharm users:
 - For packages: 
-In PyCharm IDE you can simply create new project and use build-in Python Packages instaler for searching and installing packages that you need to build your project.
-- For this application: There is a build in terminal which you can use to navigate through your file system into a project folder that you got from this repo, you need to make sure that you are in folder that has manage.py file in it and then run command: ```python manage.py migrate```.
-It will check INSTALLED_APPS setting and creates any necessary database tables. Then we use command: ```python manage.py runserver```. It will start dev server where this application is hosted. 
+In PyCharm IDE you can simply create new project and use build-in Python Packages instaler for searching and installing packages that you need to build your project
+
 ## Standard terminal users:
-- For packages: You need to make sure that you have up to date pip, then you can install those packages by instruction that are listed in their description
-- For this application: Use your standard OS terminal to navigate  through your file system into a project folder that you got from this repo, you need to make sure that you are in folder that has manage.py file in it and then run command: ```python manage.py migrate```. It will check INSTALLED_APPS setting and creates any necessary database tables. Then we use command: ```python manage.py runserver```. It will start dev server where this application is hosted. 
+- For packages: You need to make sure that you have up to date pip, then you can install those packages by instruction that are listed in their documentation
+
+- How to install Django if you using standard terminal option: https://docs.djangoproject.com/en/3.2/intro/install/
 
 ## Database:
 - For this app was used SQLite which is build-in Django framework
 
 ## Important: 
 ### For using database in this repo:
-- If you using database file wich is part of this repo then just run command: ```python manage.py migrate``` and then given commands in previous articles to check if everything is OK, then run server with previously given command aswell. 
-- Credentials for Django amin are:
+- If you using database file wich is part of this repo then just run commands: 
+- ```python manage.py makemigrations ukol``` 
+- ```python manage.py migrate```
+- ```python manage.py runserver```
+
+### Credentials for Django amin are:
 - name: admin
 - pass: heslo123
+
 ### For using fresh-new database
-- If you are not using this database contained in this repo run commands:
+- If you are not using database contained in this repo run commands:
 - ```python manage.py migrate```
 -  ```python manage.py makemigrations ukol```
 -  ```python manage.py migrate``` for second time.
 
-- Then if you want to have access to django admn site you need to create superuser for your fresh-new database
+- Then if you want to have access to django admin site you need to create superuser for your fresh-new database
 - To do so just write command ```python manage.py createsuperuser```
 - Then you will be asked for add name of supersuer acc and password
 - After a creation of superuser for your fresh-new database just run command for starting server ```python manage.py runserver``` and check urls down below.
