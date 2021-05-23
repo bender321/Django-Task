@@ -38,12 +38,16 @@ It will check INSTALLED_APPS setting and creates any necessary database tables. 
 
 ## Important: 
 ### For using database in this repo:
-- If you using database file wich is part of this repo then just run command given in previous articles to check if everything is OK, then run server with previously given command aswell. 
+- If you using database file wich is part of this repo then just run command: ```python manage.py migrate``` and then given commands in previous articles to check if everything is OK, then run server with previously given command aswell. 
 - Credentials for Django amin are:
 - name: admin
 - pass: heslo123
 ### For using fresh-new database
-- If you are not using this database contained in this repo run command given in previous articles (```python manage.py migrate```) to create a new one.
+- If you are not using this database contained in this repo run commands:
+- ```python manage.py migrate```
+-  ```python manage.py makemigrations ukol```
+-  ```python manage.py migrate``` for second time.
+
 - Then if you want to have access to django admn site you need to create superuser for your fresh-new database
 - To do so just write command ```python manage.py createsuperuser```
 - Then you will be asked for add name of supersuer acc and password
