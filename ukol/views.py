@@ -17,8 +17,12 @@ def index(request):
 
             #check for if records with given parameters are already in app database
 
-            if Entrepreneur.objects.filter(mail=form.cleaned_data.get('mail')).exists() or \
-                    Entrepreneur.objects.filter(ico=form.cleaned_data.get('ico')).exists():
+            if Entrepreneur.objects.filter(mail=form.cleaned_data.get('mail')).exists():
+
+                messages.error(request, 'Záznam obsahující tento mail již existuje!')
+                return redirect(redirected_url)
+
+            elif Entrepreneur.objects.filter(ico=form.cleaned_data.get('ico')).exists():
 
                 messages.error(request, 'Záznam obsahující toto IČO již existuje!')
                 return redirect(redirected_url)
