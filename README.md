@@ -9,18 +9,11 @@
 
 # Packages:
 
-- pip               >= 21.1.1
-- Django            >= 3.2.3
+- Django            >= 2.1.3
+- requests          >= 2.25.1
 
-- xmltodict         >= 0.12.0
-- urllib3           >= 1.26.4
-- typing-extensions >= 3.10.0.0
-- sqlparse          >= 0.4.1
-- setuptools        >= 56.2.0
-- pytz              >= 2021.1
-- asgiref           >= 3.3.4
 
-# IDE used:
+# Used IDE:
 - PyCharm
 
 # Installation:
