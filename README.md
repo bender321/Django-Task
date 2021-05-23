@@ -36,7 +36,7 @@ In PyCharm IDE you can simply create new project and use build-in Python Package
 - ```python manage.py migrate```
 - ```python manage.py runserver```
 
-### Credentials for Django amin are:
+### Credentials for Django admin are:
 - name: admin
 - pass: heslo123
 
