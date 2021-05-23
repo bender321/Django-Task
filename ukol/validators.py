@@ -1,4 +1,4 @@
-from urllib import error, request
+import requests
 import xml.etree.ElementTree as ET
 import re
 
@@ -34,16 +34,20 @@ class IcoValidator(object):
             self.url = self.url + str(self.ico)
 
             try:
-                self.response = request.urlopen(self.url).read()
-            except error.URLError:
+                self.response = requests.get(self.url)
+            except Exception:
                 return 3
-            else:
-                self.tree = ET.fromstring(self.response)
 
-            if self.tree[0][0].text != "0":
-                return 0
+            if self.response.status_code == 200:
+
+                self.tree = ET.fromstring(self.response.content)
+
+                if self.tree[0][0].text != "0":
+                    return 0
+                else:
+                    return 1
             else:
-                return 1
+                return 3
         else:
             return 2
 
